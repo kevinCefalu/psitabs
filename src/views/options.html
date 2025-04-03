@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PsiTabs Options</title>
+  <link rel="stylesheet" href="../css/options.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>PsiTabs Settings</h1>
+    </header>
+
+    <div class="settings-section">
+      <h2>General Settings</h2>
+
+      <div class="settings-group">
+        <div class="setting-item">
+          <div class="setting-label">
+            <label for="auto-deduplication">Auto Deduplication</label>
+            <p class="setting-description">Automatically detect and prompt for duplicate tabs when created</p>
+          </div>
+          <div class="setting-control">
+            <input type="checkbox" id="auto-deduplication" class="toggle-switch">
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-label">
+            <label for="auto-grouping">Auto Grouping</label>
+            <p class="setting-description">Automatically group new tabs by domain</p>
+          </div>
+          <div class="setting-control">
+            <input type="checkbox" id="auto-grouping" class="toggle-switch">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h2>LLM Configuration</h2>
+
+      <div class="settings-group">
+        <div class="setting-item">
+          <div class="setting-label">
+            <label for="llm-provider">LLM Provider</label>
+            <p class="setting-description">Select your preferred AI service provider</p>
+          </div>
+          <div class="setting-control">
+            <select id="llm-provider">
+              <option value="azure">Azure OpenAI</option>
+              <option value="openai">OpenAI</option>
+              <option value="anthropic">Anthropic Claude</option>
+              <option value="custom">Custom Endpoint</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-label">
+            <label for="llm-api-key">API Key</label>
+            <p class="setting-description">Your API key for the selected provider</p>
+          </div>
+          <div class="setting-control">
+            <input type="password" id="llm-api-key" placeholder="Enter your API key">
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-label">
+            <label for="llm-endpoint">API Endpoint</label>
+            <p class="setting-description">API endpoint URL (required for Azure and Custom)</p>
+          </div>
+          <div class="setting-control">
+            <input type="text" id="llm-endpoint" placeholder="https://...">
+          </div>
+        </div>
+
+        <div id="custom-headers-container" class="setting-item custom-provider-only" style="display: none;">
+          <div class="setting-label">
+            <label for="custom-headers">Custom Headers (JSON)</label>
+            <p class="setting-description">Additional headers for custom endpoint (optional)</p>
+          </div>
+          <div class="setting-control">
+            <textarea id="custom-headers" placeholder='{"Authorization": "Bearer YOUR_TOKEN"}'></textarea>
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-control">
+            <button id="test-llm-btn" class="primary-button">Test Connection</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h2>Group Color Settings</h2>
+
+      <div class="settings-group">
+        <div class="setting-item">
+          <div class="setting-label">
+            <label>Group Colors</label>
+            <p class="setting-description">Colors for automatically created tab groups</p>
+          </div>
+        </div>
+
+        <div class="colors-grid">
+          <div class="color-item">
+            <label for="color-news">News</label>
+            <input type="color" id="color-news" value="#FF5733">
+          </div>
+
+          <div class="color-item">
+            <label for="color-shopping">Shopping</label>
+            <input type="color" id="color-shopping" value="#33FF57">
+          </div>
+
+          <div class="color-item">
+            <label for="color-social">Social</label>
+            <input type="color" id="color-social" value="#3357FF">
+          </div>
+
+          <div class="color-item">
+            <label for="color-work">Work</label>
+            <input type="color" id="color-work" value="#F3FF33">
+          </div>
+
+          <div class="color-item">
+            <label for="color-entertainment">Entertainment</label>
+            <input type="color" id="color-entertainment" value="#FF33F3">
+          </div>
+
+          <div class="color-item">
+            <label for="color-research">Research</label>
+            <input type="color" id="color-research" value="#33FFF3">
+          </div>
+
+          <div class="color-item">
+            <label for="color-other">Other</label>
+            <input type="color" id="color-other" value="#BBBBBB">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="settings-section">
+      <h2>Storage Management</h2>
+
+      <div class="settings-group">
+        <div class="setting-item">
+          <div class="setting-label">
+            <label>Saved Sessions</label>
+            <p class="setting-description">Manage your saved browser sessions</p>
+          </div>
+          <div class="setting-control">
+            <button id="view-sessions-btn" class="secondary-button">View Sessions</button>
+            <button id="clear-sessions-btn" class="danger-button">Clear All Sessions</button>
+          </div>
+        </div>
+
+        <div class="setting-item">
+          <div class="setting-label">
+            <label>Saved Groups</label>
+            <p class="setting-description">Manage your saved tab groups</p>
+          </div>
+          <div class="setting-control">
+            <button id="view-groups-btn" class="secondary-button">View Groups</button>
+            <button id="clear-groups-btn" class="danger-button">Clear All Groups</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-buttons">
+      <button id="save-settings-btn" class="primary-button">Save Settings</button>
+      <button id="reset-settings-btn" class="secondary-button">Reset to Defaults</button>
+    </div>
+
+    <div id="status-message" class="status-message"></div>
+  </div>
+
+  <script src="../js/options.js" type="module"></script>
+</body>
+</html>
