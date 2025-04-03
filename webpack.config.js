@@ -9,19 +9,19 @@ module.exports = {
     'background/background': './src/background/background.ts',
 
     // Content scripts
-    'js/content': './src/js/content.ts',
+    'js/content': './src/content/content.ts',
 
     // UI scripts
-    'js/popup': './src/js/popup.ts',
-    'js/sidepanel': './src/js/sidepanel.ts',
-    'js/options': './src/js/options.ts',
+    'js/options': './src/views/options/options.ts',
+    'js/popup': './src/views/popup/popup.ts',
+    'js/sidepanel': './src/views/sidepanel/sidepanel.ts',
 
     // Utility scripts
-    'js/tab-manager': './src/js/tab-manager.ts',
-    'js/storage-manager': './src/js/storage-manager.ts',
-    'js/duplicate-detector': './src/js/duplicate-detector.ts',
-    'js/group-manager': './src/js/group-manager.ts',
-    'js/llm-service': './src/js/llm-service.ts'
+    'js/tab-manager': './src/services/tab-manager.ts',
+    'js/storage-manager': './src/services/storage-manager.ts',
+    'js/duplicate-detector': './src/services/duplicate-detector.ts',
+    'js/group-manager': './src/services/group-manager.ts',
+    'js/llm-service': './src/services/llm-service.ts'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -49,16 +49,14 @@ module.exports = {
         { from: 'src/manifest.json', to: '.' },
 
         // Copy HTML files
-        { from: 'src/views', to: 'views' },
+        { from: 'src/views/**/*.html', to: 'views/[name][ext]' },
 
         // Copy CSS files
-        { from: 'src/css', to: 'css' },
+        { from: 'src/views/**/*.css', to: 'css/[name][ext]' },
+
 
         // Copy images
         { from: 'src/images', to: 'images', noErrorOnMissing: true },
-
-        // Copy lib directory if it has content
-        { from: 'src/lib', to: 'lib', noErrorOnMissing: true },
       ],
     }),
   ],

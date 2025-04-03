@@ -3,8 +3,8 @@
  * Handles settings management for the extension
  */
 
-import { StorageManager } from './storage-manager';
-import { LLMService } from './llm-service';
+import { StorageManager } from '../../services/storage-manager';
+import { LLMService } from '../../services/llm-service';
 
 interface GroupColors {
   [key: string]: string;

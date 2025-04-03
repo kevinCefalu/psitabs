@@ -3,10 +3,10 @@
  * Handles events and core functionality for the extension
  */
 
-import { TabManager } from '../js/tab-manager';
-import { DuplicateDetector, DuplicateGroup } from '../js/duplicate-detector';
-import { GroupManager } from '../js/group-manager';
-import { StorageManager } from '../js/storage-manager';
+import { TabManager } from '../services/tab-manager';
+import { DuplicateDetector, DuplicateGroup } from '../services/duplicate-detector';
+import { GroupManager } from '../services/group-manager';
+import { StorageManager } from '../services/storage-manager';
 
 // Initialize services
 const tabManager = new TabManager();
@@ -221,7 +221,11 @@ async function handleCommand(command: string): Promise<void> {
     switch (command) {
       case 'open-side-panel':
         // Fix error TS2554: Expected 1-2 arguments, but got 0
-        await chrome.sidePanel.open({ windowId: chrome.windows.WINDOW_ID_CURRENT });
+        if (chrome.sidePanel && chrome.sidePanel.open) {
+          await chrome.sidePanel.open({ windowId: chrome.windows.WINDOW_ID_CURRENT });
+        } else {
+          console.warn('Side panel API is not available in this environment.');
+        }
         break;
       case 'find-duplicates':
         await findAndHandleDuplicates();

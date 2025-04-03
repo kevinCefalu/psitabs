@@ -1,8 +1,8 @@
-import { TabManager } from './tab-manager';
-import { GroupManager } from './group-manager';
-import { DuplicateDetector, DuplicateGroup } from './duplicate-detector';
-import { LLMService } from './llm-service';
-import { StorageManager } from './storage-manager';
+import { TabManager } from '../../services/tab-manager';
+import { GroupManager } from '../../services/group-manager';
+import { DuplicateDetector, DuplicateGroup } from '../../services/duplicate-detector';
+import { LLMService } from '../../services/llm-service';
+import { StorageManager } from '../../services/storage-manager';
 
 document.addEventListener('DOMContentLoaded', async () => {
   const tabManager = new TabManager();

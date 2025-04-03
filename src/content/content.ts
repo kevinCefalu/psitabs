@@ -10,8 +10,8 @@ interface DuplicateTabRequest {
 
 // Listen for messages from the extension
 chrome.runtime.onMessage.addListener((
-  request: DuplicateTabRequest, 
-  sender: chrome.runtime.MessageSender, 
+  request: DuplicateTabRequest,
+  sender: chrome.runtime.MessageSender,
   sendResponse: (response: any) => void
 ) => {
   console.log('Content script received message:', request);
@@ -45,7 +45,7 @@ function extractPageContent(): string {
   let content = '';
 
   // Get the main content element if it exists
-  const mainElement = document.querySelector('main') || 
+  const mainElement = document.querySelector('main') ||
                      document.querySelector('article') ||
                      document.querySelector('#content') ||
                      document.querySelector('.content');
@@ -109,7 +109,7 @@ function showDuplicateNotification(originalTab: chrome.tabs.Tab): void {
       <div style="flex-grow: 1;">
         <div style="font-weight: bold; margin-bottom: 8px;">Duplicate Tab Detected</div>
         <div style="margin-bottom: 10px;">
-          This page is already open in another tab: 
+          This page is already open in another tab:
           <strong>${originalTab.title || 'Untitled'}</strong>
         </div>
         <div style="display: flex; gap: 10px;">

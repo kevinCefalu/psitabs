@@ -414,12 +414,12 @@ export class StorageManager {
     try {
       const settings = await this.getSettings();
       const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      
+
       // If set to 'system', use system preference
       if (settings.theme === 'system') {
         return prefersDarkMode ? 'dark' : 'light';
       }
-      
+
       return settings.theme;
     } catch (error) {
       console.error('Error getting theme:', error);

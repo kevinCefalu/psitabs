@@ -1,0 +1,165 @@
+/* Popup specific styles */
+
+body {
+  width: 400px;
+  max-height: 600px;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 16px;
+}
+
+/* Header style overrides */
+header {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.actions button {
+  padding: 6px;
+}
+
+/* Tabs section */
+.tabs-section, .llm-section, .groups-section {
+  background-color: var(--card-background);
+  border-radius: var(--border-radius-md);
+  padding: 12px;
+  box-shadow: var(--shadow-sm);
+}
+
+.tab-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.tab-action-group {
+  display: flex;
+  gap: 8px;
+}
+
+.tab-count {
+  color: var(--light-text);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.tabs-container {
+  max-height: 200px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* LLM section */
+.llm-actions {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.llm-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding: 8px;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--hover-background);
+}
+
+.llm-status-message {
+  color: var(--light-text);
+}
+
+.llm-status a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.llm-status a:hover {
+  text-decoration: underline;
+}
+
+/* Groups section */
+.groups-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.group-item {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  border-radius: var(--border-radius-sm);
+  gap: 8px;
+}
+
+.group-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.group-title {
+  flex-grow: 1;
+  font-size: 13px;
+}
+
+.group-tab-count {
+  font-size: 11px;
+  color: var(--light-text);
+  background-color: var(--hover-background);
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.group-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.no-groups {
+  color: var(--light-text);
+  font-size: 13px;
+  text-align: center;
+  padding: 16px 0;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border-color);
+  padding-top: 12px;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.footer-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Popup-specific modal overrides */
+.modal-content {
+  max-width: 350px;
+}
+
+.summary-content {
+  font-size: 14px;
+  line-height: 1.5;
+}

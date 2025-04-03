@@ -36,8 +36,29 @@
   "options_page": "views/options.html",
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["js/content.js"]
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/content.js"
+      ]
     }
-  ]
+  ],
+  "commands": {
+    "_execute_action": {
+      "description": "Open PsiTabs popup"
+    },
+    "open-side-panel": {
+      "description": "Open PsiTabs side panel"
+    },
+    "find-duplicates": {
+      "description": "Find duplicate tabs"
+    },
+    "sort-tabs": {
+      "description": "Sort tabs in current window"
+    },
+    "group-tabs": {
+      "description": "Group similar tabs"
+    }
+  }
 }

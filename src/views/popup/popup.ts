@@ -3,11 +3,11 @@
  * Handles the UI interactions in the extension popup
  */
 
-import { TabManager } from './tab-manager';
-import { DuplicateDetector, DuplicateGroup } from './duplicate-detector';
-import { GroupManager } from './group-manager';
-import { LLMService } from './llm-service';
-import { StorageManager } from './storage-manager';
+import { TabManager } from '../../services/tab-manager';
+import { DuplicateDetector, DuplicateGroup } from '../../services/duplicate-detector';
+import { GroupManager } from '../../services/group-manager';
+import { LLMService } from '../../services/llm-service';
+import { StorageManager } from '../../services/storage-manager';
 
 // Initialize services
 const tabManager = new TabManager();

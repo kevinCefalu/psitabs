@@ -1,5 +1,5 @@
 /**
- * Tab Manager - Handles tab operations for PsiTabs
+ * Tab Manager Service for PsiTabs
  * Provides utilities for querying, manipulating, and organizing tabs
  */
 
@@ -192,7 +192,7 @@ export class TabManager {
       return tab as chrome.tabs.Tab;
     } catch (error) {
       console.error(`Error duplicating tab ${tabId}:`, error);
-      throw error;
+      throw error; // Re-throw the error to be handled by caller
     }
   }
 
