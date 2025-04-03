@@ -10,9 +10,10 @@
     "type-check": "tsc --noEmit"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
+  "author": "Psibit Engineering",
+  "license": "GPL-3.0-only",
+  "homepage": "http://github.com/kevincefalu/psitabs",
+  "description": "A powerful tab management extension with AI capabilities to help organize your browser tabs.",
   "devDependencies": {
     "@types/chrome": "^0.0.313",
     "copy-webpack-plugin": "^13.0.0",
