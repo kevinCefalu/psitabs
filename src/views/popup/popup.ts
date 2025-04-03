@@ -805,8 +805,14 @@ function openOptions(): void {
  * Open the sidebar
  */
 function openSidebar(): void {
-  // Fix the error TS2554: Expected 1-2 arguments, but got 0
-  chrome.sidePanel.open({ windowId: chrome.windows.WINDOW_ID_CURRENT });
+  // Get the actual window ID first, then open the side panel
+  chrome.windows.getCurrent().then(window => {
+    if (window.id) {
+      chrome.sidePanel.open({ windowId: window.id });
+    } else {
+      console.error("Could not determine current window ID");
+    }
+  });
 }
 
 /**
