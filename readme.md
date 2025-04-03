@@ -25,25 +25,29 @@ PsiTabs is designed to help you take control of your browsing experience by prov
 ### Setup
 
 1. Clone the repository:
-   ```
+
+   ```bash
    git clone https://github.com/kevinCefalu/psitabs.git
    cd psitabs
    ```
 
 2. Install dependencies:
-   ```
+
+   ```bash
    npm install
    ```
 
 3. Build the extension:
 
    For development build with source maps:
-   ```
+
+   ```bash
    npm run build
    ```
 
    For production build (minified):
-   ```
+
+   ```bash
    npm run build:prod
    ```
 
@@ -52,18 +56,15 @@ PsiTabs is designed to help you take control of your browsing experience by prov
 ### Development
 
 To continuously rebuild as you make changes:
-```
+
+```bash
 npm run watch
 ```
 
 To check for TypeScript errors without building:
-```
-npm run type-check
-```
 
-To lint your code:
-```
-npm run lint
+```bash
+npm run type-check
 ```
 
 ## Installing in Microsoft Edge
